@@ -11,14 +11,19 @@ http://www.springframework.org/schema/aop http://www.springframework.org/schema/
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.1.xsd">
  
+  <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+      <property name="location">
+         <value>file:C:\Users\omar\Desktop\PROYECYOS\Properties\CineTex.properties</value>
+      </property> 
+   </bean>
 
 	<context:annotation-config />
 	
    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-    <property name="url" value="jdbc:mysql://localhost:3306/basedatoscinetex"/>
-    <property name="username" value="root"/>
-    <property name="password" value="MYSQLharry1980L"/>
+    <property name="driverClassName" value="${BaseDatos.driverClassName}"/>
+    <property name="url" value="${BaseDatos.url}"/>
+    <property name="username" value="${BaseDatos.username}"/>
+    <property name="password" value="${BaseDatos.password}"/>
   </bean>
   
   <bean id="SessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">

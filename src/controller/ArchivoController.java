@@ -27,7 +27,6 @@ public class ArchivoController {
 	ModelAndView getArchivo (HttpServletRequest request){
 		
 		List<Articulo> ListaResultado = archivoDAO.getUltimos10();
-//		ModelAndView mv = new ModelAndView("Archivo");	
 	
 		ModelAndView mv = new ModelAndView();
 		

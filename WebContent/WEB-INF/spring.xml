@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+ 
+
+	<context:annotation-config />
+	
+   <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://localhost:3306/basedatoscinetex"/>
+    <property name="username" value="root"/>
+    <property name="password" value="MYSQLharry1980L"/>
+  </bean>
+  
+  <bean id="SessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+    <property name="dataSource" ref="dataSource"/>
+    <property name="mappingResources">
+      <list>
+        <value>hibernate/hibernate.xml</value> 
+      </list>
+    </property>
+    
+    <property name="hibernateProperties">
+    <value>
+      hibernate.show_sql=true    
+      hibernate.dialect=org.hibernate.dialect.MySQLDialect
+      hibernate.hbm2ddl.auto=update
+      hibernate.connection.autocommit=false
+      hibernate.current_session_context_class=thread
+    </value>
+    </property>
+  </bean>
+ 
+  
+  <bean id="PortadaController" class="controller.PortadaController"/>
+  <bean id="ArticuloController" class="controller.ArticuloController"/>   
+  <bean id="ArchivoController" class="controller.ArticuloController"/> 
+  <bean id="ResenaController" class="controller.ResenaController"/> 
+
+  
+  <bean id="PortadaDAO" class="dao.PortadaDAO"/> 
+  <bean id="ArticuloDAO" class="dao.ArticuloDAO"/>  
+  <bean id="UsuariosDAO" class="dao.UsuariosDAO"/> 
+  <bean id="ArchivoDAO" class="dao.ArchivoDAO"/> 
+  <bean id="ResenaDAO" class="dao.ResenaDAO"/> 
+  
+  <bean id="Hash5" class="helpers.Hash5"/> 
+      
+</beans>

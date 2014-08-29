@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hibernate">
+
+  <class name="Articulo" table="ARTICULO">
+    <id name="id" column="ARTICULO_ID">
+      <generator class="native"/>
+    </id>
+    <property name="Titulo"/>
+    <property name="Texto"/>
+    <property name="Autor"/>
+    <property name="Fecha"/>
+    <property name="Url"/>
+    <property name="Imagen"/>
+  </class>
+
+  <class name="Usuario" table="USUARIO" >
+    <id name="id" column="USUARIO_ID">
+      <generator class="native"/>
+    </id>
+    <property name="Email"/>
+    <property name="Contrasena"/>
+  </class>
+
+ </hibernate-mapping>

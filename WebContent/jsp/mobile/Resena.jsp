@@ -13,7 +13,13 @@
 </head>
 
 <body>
-<h1><span style="color:#259FDA; font-size:400%;">CineTex.com</span></h1>
+
+<div align="left" style="width: 10%">
+<img  width="100%" src="theme/images/cinema.jpg" align="left" />
+</div>
+
+
+<h1><span style="color:black; font-size:400%;">CineTex.com</span></h1>
 
 
 <div id="container">

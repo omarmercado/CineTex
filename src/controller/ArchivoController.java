@@ -31,7 +31,7 @@ public class ArchivoController {
 		ModelAndView mv = new ModelAndView();
 		
 		
-		  if(request.getHeader("User-Agent").indexOf("Mobile") != -1) {
+		  if(request.getHeader("User-Agent").indexOf("Mobile") != -1 || request.getHeader("User-Agent").indexOf("Android") != -1) {
 			    mv.setViewName("mobile/Archivo");
 			  } else {
 				    mv.setViewName("/Archivo");
@@ -50,7 +50,7 @@ public class ArchivoController {
 		ModelAndView mv = new ModelAndView();	
 		
 		
-		  if(request.getHeader("User-Agent").indexOf("Mobile") != -1) {
+		  if(request.getHeader("User-Agent").indexOf("Mobile") != -1 || request.getHeader("User-Agent").indexOf("Android") != -1) {
 			    mv.setViewName("mobile/Archivo");
 			  } else {
 				    mv.setViewName("/Archivo");
@@ -61,13 +61,13 @@ public class ArchivoController {
 		return mv;
 	}
 	
-	@RequestMapping(value="/ArchivoPorFecha.htm", method=RequestMethod.POST)
+	@RequestMapping(value="/ArchivoPorFecha.htm", method=RequestMethod.GET)
 	ModelAndView getArchivoPorFecha (@RequestParam(value="mes")String mes, HttpServletRequest request ){
 		
 		List<Articulo> ListaResultado = archivoDAO.getPorMes(mes);
 		ModelAndView mv = new ModelAndView();	
 		
-		  if(request.getHeader("User-Agent").indexOf("Mobile") != -1) {
+		  if(request.getHeader("User-Agent").indexOf("Mobile") != -1 || request.getHeader("User-Agent").indexOf("Android") != -1) {
 			    mv.setViewName("mobile/Archivo");
 			  } else {
 				    mv.setViewName("/Archivo");

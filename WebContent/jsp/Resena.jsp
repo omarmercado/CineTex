@@ -15,7 +15,7 @@
 <body>
 
 <div id="container">
-<div id="top"><h1><span style="color:#259FDA; font-size:14pt;">CineTex.com</span></h1></div>
+<div id="top"><h1><span>CineTex.com</span></h1></div>
 
 <div id="navcontainer">
 <div id="topnav">

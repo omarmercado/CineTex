@@ -29,7 +29,7 @@ public class PortadaController {
 
 		ModelAndView mv = new ModelAndView();
 		
-		  if(request.getHeader("User-Agent").indexOf("Mobile") != -1) {
+		  if(request.getHeader("User-Agent").indexOf("Mobile") != -1 || request.getHeader("User-Agent").indexOf("Android") != -1) {
 			    mv.setViewName("mobile/Portada");
 			  } else {
 				    mv.setViewName("/Portada");

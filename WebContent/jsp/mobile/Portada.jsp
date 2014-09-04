@@ -33,9 +33,16 @@
 	
 <div id="content">
 
-<h2>Ultimas Reseñas</h2>
-
-
+<table width="100%">
+  <tr>
+    <td align="left">
+      <h1>Ultimas Reseñas</h1>
+    </td>
+    <td align="right">
+      <h1>Ultima Actualizacion : ${Pagina.getUltimaActualizacion()}</h1>
+    </td>
+  </tr>
+</table>
 
 <c:forEach var="Articulo" items="${ListaResenas}">
 

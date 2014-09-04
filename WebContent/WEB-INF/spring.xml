@@ -57,6 +57,7 @@ http://www.springframework.org/schema/context/spring-context-3.1.xsd">
   <bean id="UsuariosDAO" class="dao.UsuariosDAO"/> 
   <bean id="ArchivoDAO" class="dao.ArchivoDAO"/> 
   <bean id="ResenaDAO" class="dao.ResenaDAO"/> 
+  <bean id="PaginaDAO" class="dao.PaginaDAO"/> 
   
   <bean id="Hash5" class="helpers.Hash5"/> 
       

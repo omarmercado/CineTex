@@ -35,7 +35,7 @@
   <tr>
   
           <td width="100%" height="30px" style="border: 1px solid #eee;background : #F7FAFB url(images/column.gif) no-repeat;">  
-            <table width="100%" height="100%">
+            <table width="100%">
             <tr>
                 <th align="left">    
                   <c:choose>
@@ -44,8 +44,7 @@
                              style="outline:none;background-color: transparent;border:none" value="<c:out value="${Resena.getTitulo()}"/>"/> 
                     </c:when>
                     <c:when test="${empty sessionScope.usuario}">
-                      <input type="text" name="txtTitulo" id="txtTitulo" 
-                             style="outline:none;background-color: transparent;border:none" value="<c:out value="${Resena.getTitulo()}"/>"  readonly="readonly"  /> 
+                      <p style="font-size: 150%" align="center"> ${Resena.getTitulo()} </p> 
                 
                     </c:when>
                   </c:choose>
@@ -55,7 +54,7 @@
             
             <table width="100%">
             <tr>
-              <td valign="top" width="70%">                  
+              <td valign="top" width="60%">                  
                 <c:choose>
                   <c:when test="${sessionScope.usuario > 0}">     
                     <textarea name="txtTexto" id="txtTexto" style="outline:none;background-color: transparent;border:none" cols="60" rows="30">
@@ -63,12 +62,12 @@
                     </textarea> 
                   </c:when>
                   <c:when test="${empty sessionScope.usuario}">     
-                    <p> ${Resena.getTexto()}</p>
+                    <p style="font-size: 130%"> ${Resena.getTexto()}</p>
                   </c:when>
                 </c:choose>    
               </td>                           
-              <td width="30%">
-                <img height="100%"  width="100%" src="jsp/img/<c:out value="${Articulo.getUrl()}"/>.jpg">
+              <td width="40%" valign="top">
+                <img height="100%"  width="100%" src="jsp/img/<c:out value="${Resena.getUrl()}"/>.jpg">
               </td>
             </tr>
             

@@ -31,7 +31,16 @@
 	
 <div id="content">
 
-<h2>Ultimas Reseñas</h2>
+<table width="100%">
+  <tr>
+    <td align="left">
+      <h1>Ultimas Reseñas</h1>
+    </td>
+    <td align="right">
+      <h1>Ultima Actualizacion : ${Pagina.getUltimaActualizacion()}</h1>
+    </td>
+  </tr>
+</table>
 
 
 
@@ -40,8 +49,8 @@
 <table width="100%">
   <tr>
   
-          <td width="100%" height="300px" style="border: 1px solid #eee;background : #F7FAFB url(images/column.gif) no-repeat;">  
-            <table width="100%" height="100%">
+          <td width="100%" height="70%" style="border: 1px solid #eee;background : #F7FAFB url(images/column.gif) no-repeat;">  
+            <table width="100%" >
             <tr>
                 <th align="left"> 
            <font style="font-size: 200%;">
@@ -54,11 +63,13 @@
               
               <td width="60%" valign="top">
               
-              <p> ${Articulo.getTexto()} </p> 
+              <p style="font-size: 150%"> ${fn:substring(Articulo.getTexto(), 0, 300)} ... 
+                <Font style="font-size: 100%">  <a href="Resena.htm?id=<c:out value="${Articulo.getId()}"/>">ir a articulo </a></Font>
+              </p>
                </td>
              
              <td width="40%">
-              <img height="60%"  width="70%" src="jsp/img/<c:out value="${Articulo.getUrl()}"/>.jpg">
+              <img height="80%"  width="70%" src="jsp/img/<c:out value="${Articulo.getUrl()}"/>.jpg">
             
               </td>
               </tr>

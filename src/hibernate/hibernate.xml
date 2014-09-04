@@ -10,7 +10,7 @@
       <generator class="native"/>
     </id>
     <property name="Titulo"/>
-    <property name="Texto"/>
+    <property name="Texto" type="text"/>
     <property name="Autor"/>
     <property name="Fecha"/>
     <property name="Url"/>
@@ -25,4 +25,11 @@
     <property name="Contrasena"/>
   </class>
 
+    <class name="Pagina" table="PAGINA">
+    <id name="id" column="PAGINA_ID">
+      <generator class="native"/>
+    </id>
+    <property name="UltimaActualizacion"/>
+  </class>
+  
  </hibernate-mapping>

@@ -22,9 +22,20 @@
 		<ul>
 		<li><a href="Portada.htm" title="">Portada</a></li>
 		<li><a href="Archivo.htm" title="">Archivo</a></li>
+		<li><a href="jsp/SitiosRecomendados.jsp">Sitios Recomendados</a></li>	
 		</ul>
 </div>
 </div>
+
+<table width="100%">
+  <tr>
+    <td align="right">
+       <p>Siguenos en Twitter : <a href="https://twitter.com/CineTexNet" class="twitter-follow-button" data-show-count="false">Follow @CineTexNet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</p>
+</td>
+</tr>
+</table>
 	
 <div id="content">
 
@@ -34,7 +45,7 @@
 <table width="100%">
   <tr>
   
-          <td width="100%" height="30px" style="border: 1px solid #eee;background : #F7FAFB url(images/column.gif) no-repeat;">  
+          <td width="100%" height="30px" style="border: 1px solid #eee;background : #F7FAFB;">  
             <table width="100%">
             <tr>
                 <th align="left">    
@@ -89,7 +100,9 @@
 
 <form name="frmResenaEliminar" method="post" action="ResenaEliminar.htm">
 <input type="hidden"  value="${Resena.getId()}">
+<c:if test="${sessionScope.usuario > 0}">     
 <input type="submit" id="id" name="id" value="Eliminar">
+</c:if>
 </form>
 
 </div>

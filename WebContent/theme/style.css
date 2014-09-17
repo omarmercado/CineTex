@@ -4,7 +4,7 @@ padding : 0;
 }
 body {
 color : #4E6D95;
-background : #3D5965 url(images/bg.jpg) repeat-x;
+background :white;
 width : 100%;
 font : 75% "lucida sans", "Trebuchet MS", Arial, Helvetica, Tahoma, sans-serif;
 }
@@ -33,7 +33,7 @@ background : #fff;
 #top {
 padding : 1em;
 height:100px;
-background : #3D5965 url(images/top.gif) no-repeat;
+background :  url(images/cinema.jpg) no-repeat;
 color : #fff;
 }
 #top h1 {letter-spacing: 3px;
@@ -101,8 +101,6 @@ padding : .5em 0 1em 0;
 font-size : 0.9em;
 border-bottom : 0px solid #808080;
 border-top : 0px solid #808080;
-color : #333;
-background : #3D5965 url(images/footer.gif) no-repeat;
 }
 #footer img {
 float : right;

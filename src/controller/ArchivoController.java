@@ -3,6 +3,7 @@ package controller;
 import hibernate.Articulo;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 
 import dao.ArchivoDAO;
+import dao.PaginaDAO;
 
 
 @Controller
@@ -22,6 +24,10 @@ public class ArchivoController {
 
 	@Autowired
 	ArchivoDAO archivoDAO;
+	
+	
+	@Autowired
+	PaginaDAO paginaDAO;
 
 	@RequestMapping("/Archivo.htm")
 	ModelAndView getArchivo (HttpServletRequest request){
@@ -30,13 +36,15 @@ public class ArchivoController {
 	
 		ModelAndView mv = new ModelAndView();
 		
+		Map<String, String> VersionInfo = paginaDAO.getVersion(request, "Archivo"); 
+
+		mv.setViewName(VersionInfo.get("View"));
 		
-		  if(request.getHeader("User-Agent").indexOf("Mobile") != -1 || request.getHeader("User-Agent").indexOf("Android") != -1) {
-			    mv.setViewName("mobile/Archivo");
-			  } else {
-				    mv.setViewName("/Archivo");
-			  }
 		
+		    String tipo = VersionInfo.get("Tipo").trim();
+
+			paginaDAO.pageView("Archivo", "",tipo);
+
 		
 		  mv.addObject("ListaResultado",ListaResultado);	
 		return mv;

@@ -28,15 +28,26 @@
 		<ul>
 		<li><font size="100%"><a href="Portada.htm">Portada</a></font></li>
 		<li><font size="100%"><a href="Archivo.htm">Archivo</a></font></li>
+		<li><font size="100%"><a href="jsp/mobile/SitiosRecomendados.jsp">Sitios Recomendados</a></font></li>				
 		</ul>
 </div>
 	
+	<table width="100%">
+  <tr>
+    <td align="right">
+       <p>Siguenos en Twitter : <a href="https://twitter.com/CineTexNet" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @CineTexNet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</p>
+</td>
+</tr>
+</table>
+
 <div id="content">
 
 <table width="100%" cellspacing="50">
   <tr>
     <td  align="center">
-      <font style="font-size: 200%" >Resena</font>
+      <font style="font-size: 300%" > ${Resena.getTitulo()}</font>
     </td>
   </tr>
 </table>
@@ -44,25 +55,15 @@
 
 <form name="frmResena" action="ResenaEdit.htm" method="post">
 <input type="hidden" name="id" id="id" value="${Resena.getId()}"/>
-<table width="100%" height="70%">
+<table width="100%" >
   <tr>
   
-          <td width="100%"  style="border: 1px solid #eee;background : #F7FAFB url(images/column.gif) no-repeat;">  
-            <table width="100%"  align="left" >
-            <tr style="font-size: 300%" >
-                <th align="left">    
-                   ${Resena.getTitulo()} 
-                </th>
-            </tr>
-            <tr style="height: 50px">
-                <td colspan="6"></td>
-            </tr>
-            </table>
+          <td width="100%"  style="border: 4px solid #eee;background : #F7FAFB ;">  
              
-            <table width="70%" align="center">
+            <table width="100%">
               <tr>
-                <td width="60%" align="center">
-                  <img height="100%"  width="100%" src="jsp/img/<c:out value="${Articulo.getUrl()}"/>.jpg">
+                <td>
+                  <img width="90%" style="display: block;" src="/jsp/img/<c:out value="${Resena.getUrl()}"/>.jpg">
                 </td>
               </tr>
             </table>
@@ -70,7 +71,7 @@
             
             <table width="100%" >
             <tr>
-              <td valign="top" width="80%" align="justify">                  
+              <td valign="top" width="90%" align="justify">                  
                     <p style="font-size: x-large;"> ${Resena.getTexto()}</p>
               </td>                           
             </tr>

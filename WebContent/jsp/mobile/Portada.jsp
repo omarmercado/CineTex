@@ -28,9 +28,20 @@
 		<ul>
 		<li><font size="100%"><a href="Portada.htm">Portada</a></font></li>
 		<li><font size="100%"><a href="Archivo.htm">Archivo</a></font></li>
+		<li><font size="100%"><a href="jsp/mobile/SitiosRecomendados.jsp">Sitios Recomendados</a></font></li>			
 		</ul>
 </div>
 	
+	<table width="100%">
+  <tr>
+    <td align="right">
+       <p>Siguenos en Twitter : <a href="https://twitter.com/CineTexNet" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @CineTexNet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</p>
+</td>
+</tr>
+</table>
+
 <div id="content">
 
 <table width="100%">
@@ -45,31 +56,30 @@
 </table>
 
 <c:forEach var="Articulo" items="${ListaResenas}">
-
+<br>
+<br>
 <table width="100%" align="center">
   <tr>
-    <td align="center">
+    <td align="center" valign="bottom">
       <font style="font-size: 200%;">
-        <a href="Resena.htm?id=${Articulo.getId()}">${Articulo.getTitulo()}</a>
+        <a style="text-decoration: none"  href="Resena.htm?id=${Articulo.getId()}">${Articulo.getTitulo()}</a>
       </font>
     </td>
   </tr>
 </table>
 <br>
-<br>
-<br>
 <table width="100%">
   <tr>
-    <td width="100%" height="30%" style="border: 1px solid #eee;background : #F7FAFB url(images/column.gif) no-repeat;">  
+    <td width="100%" height="30%" style="border: 1px solid #eee;background : #F7FAFB ;">  
       <table width="100%" height="100%">
         <tr>
           <td width="50%" align="left">
-            <img height="100%"  width="100%" src="jsp/img/<c:out value="${Articulo.getUrl()}"/>.jpg">
+            <img height="100%"  width="100%" src="/jsp/img/<c:out value="${Articulo.getUrl()}"/>.jpg">
           </td>
         
         
           <td width="50%" align="left" valign="top">
-            <p style="font-size: 200%;"> ${Articulo.getTexto()} </p> 
+            <p style="font-size: 200%;"> ${fn:substring(Articulo.getTexto(), 0, 350)}...  </p> 
           </td>
         </tr>
         

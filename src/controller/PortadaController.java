@@ -5,6 +5,7 @@ import hibernate.Pagina;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -25,7 +26,7 @@ public class PortadaController {
 	@Autowired
 	PaginaDAO paginaDAO;
 		
-	@RequestMapping("/Portada.htm")
+	@RequestMapping(value={"/","/Portada.htm"})
 	public ModelAndView getPortada(HttpServletRequest request){
 
 		List<Articulo> ListaResenas = new ArrayList<Articulo>();
@@ -35,13 +36,16 @@ public class PortadaController {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("Pagina",pagina);
 
+		Map<String, String> VersionInfo = paginaDAO.getVersion(request, "Portada"); 
+
+		mv.setViewName(VersionInfo.get("View"));
 		
-		  if(request.getHeader("User-Agent").indexOf("Mobile") != -1 || request.getHeader("User-Agent").indexOf("Android") != -1) {
-			    mv.setViewName("mobile/Portada");
-			  } else {
-				    mv.setViewName("/Portada");
-			  }
+	    String tipo = VersionInfo.get("Tipo").trim();
+
 		  
+		  
+			paginaDAO.pageView("Portada", "",tipo);
+
 		  mv.addObject("ListaResenas",ListaResenas);
 		return mv ;
 

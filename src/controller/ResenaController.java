@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import dao.PaginaDAO;
 import dao.ResenaDAO;
 import dao.UsuariosDAO;
 
@@ -25,6 +28,9 @@ public class ResenaController {
 	
 	@Autowired
 	UsuariosDAO usuariosDAO;
+	
+	@Autowired
+	PaginaDAO paginaDAO;
 
 	@RequestMapping("/Resena.htm")
 	public ModelAndView getResena(@RequestParam(value="id")String id,HttpServletRequest request){
@@ -34,12 +40,15 @@ public class ResenaController {
 		
 		ModelAndView mv = new ModelAndView();
 		
-		  if(request.getHeader("User-Agent").indexOf("Mobile") != -1 || request.getHeader("User-Agent").indexOf("Android") != -1) {
-			    mv.setViewName("mobile/Resena");
-			  } else {
-				  mv.setViewName("Resena");
-			  }
+	    
+		Map<String, String> VersionInfo = paginaDAO.getVersion(request, "Resena"); 
+		mv.setViewName(VersionInfo.get("View"));
+
+
+	    String tipo = VersionInfo.get("Tipo").trim();
 		  
+			paginaDAO.pageView("Resena", id, tipo);
+
 		mv.addObject("Resena",Resena);
 		return mv;
 	}

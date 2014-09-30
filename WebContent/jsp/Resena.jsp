@@ -8,20 +8,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>CineTex.com</title>
+<title>CineTex.NET</title>
 <link href="theme/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
 <div id="container">
-<div id="top"><h1><span>CineTex.com</span></h1></div>
+<div id="top"><h1><span>CineTex.NET</span></h1></div>
 
 <div id="navcontainer">
 <div id="topnav">
 		<ul>
-		<li><a href="Portada.htm" title="">Portada</a></li>
-		<li><a href="Archivo.htm" title="">Archivo</a></li>
+		<li><a href="Portada.htm">Portada</a></li>
+		<li><a href="Archivo.htm">Archivo</a></li>
 		<li><a href="jsp/SitiosRecomendados.jsp">Sitios Recomendados</a></li>	
 		</ul>
 </div>
@@ -78,7 +78,7 @@
                 </c:choose>    
               </td>                           
               <td width="40%" valign="top">
-                <img height="100%"  width="100%" src="jsp/img/<c:out value="${Resena.getUrl()}"/>.jpg">
+                <img height="100%"  width="100%" src="${Pagina.getImgPATH()}/<c:out value="${Resena.getUrl()}"/>.jpg">                
               </td>
             </tr>
             
@@ -107,7 +107,7 @@
 
 </div>
 
-<div id="footer"><p><a href="#">homepage</a> | <a href="mailto:denise@mitchinson.net">contact</a> | &copy; 2008 Anyone | Design by <a href="http://www.mitchinson.net"> www.mitchinson.net</a> |  Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0  License</a></p></div>
+<div id="footer" ><p><a href="Portada.htm">homepage</a> | <a href="mailto:CineTex@outlook.com">contact</a> | | Design by <a href="http://www.mitchinson.net"> www.mitchinson.net</a> |  Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0  License</a></p></div>
 
 </div>
 </body>

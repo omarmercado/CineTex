@@ -8,6 +8,7 @@ public class Pagina {
 	
 	int id;
 	Date UltimaActualizacion;
+	String imgPATH;
 	
 	public int getId() {
 		return id;
@@ -21,35 +22,13 @@ public class Pagina {
 	public void setUltimaActualizacion(Date ultimaActualizacion) {
 		UltimaActualizacion = ultimaActualizacion;
 	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime
-				* result
-				+ ((UltimaActualizacion == null) ? 0 : UltimaActualizacion
-						.hashCode());
-		result = prime * result + id;
-		return result;
+	public String getImgPATH() {
+		return imgPATH;
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pagina other = (Pagina) obj;
-		if (UltimaActualizacion == null) {
-			if (other.UltimaActualizacion != null)
-				return false;
-		} else if (!UltimaActualizacion.equals(other.UltimaActualizacion))
-			return false;
-		if (id != other.id)
-			return false;
-		return true;
+	public void setImgPATH(String imgPATH) {
+		this.imgPATH = imgPATH;
 	}
+	
 
 	
 }

@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import hibernate.Articulo;
+import hibernate.Pagina;
 import hibernate.Usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,8 @@ public class ResenaController {
 		
 		
 		Articulo Resena = resenaDAO.getResena(id);
-		
+		Pagina pagina = paginaDAO.getPagina();
+
 		ModelAndView mv = new ModelAndView();
 		
 	    
@@ -48,6 +50,8 @@ public class ResenaController {
 	    String tipo = VersionInfo.get("Tipo").trim();
 		  
 			paginaDAO.pageView("Resena", id, tipo);
+
+			mv.addObject("Pagina",pagina);
 
 		mv.addObject("Resena",Resena);
 		return mv;

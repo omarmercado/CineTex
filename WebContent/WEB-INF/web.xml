@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>CineTex</display-name>
   <welcome-file-list>
-    <welcome-file>Portada.htm</welcome-file>
+    <welcome-file></welcome-file>
   </welcome-file-list>
 
   <display-name>CineTex</display-name>
@@ -16,6 +16,10 @@
   <servlet-mapping>
     <servlet-name>mvc</servlet-name>
     <url-pattern>*.htm</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>mvc</servlet-name>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
   <listener>
     <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>

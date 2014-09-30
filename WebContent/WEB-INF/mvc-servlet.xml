@@ -11,7 +11,10 @@
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
  
 	<context:component-scan base-package="controller" />
- 
+    <mvc:resources mapping="/theme/**" location="/theme/" /> 
+    <mvc:resources mapping="/mobile/**" location="/mobile/" /> 
+    <mvc:resources mapping="/fotos/**" location="/fotos/" /> 
+    
 	<mvc:annotation-driven />
 	
 	    <bean id="viewResolver"

@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>CineTex.com</title>
+<title>CineTex.NET</title>
 <link href="mobile/theme/style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -19,7 +19,7 @@
 </div>
 
 
-<h1><span style="color:black; font-size:400%;">CineTex.com</span></h1>
+<h1><span style="color:black; font-size:400%;">CineTex.NET</span></h1>
 
 
 <div id="container">
@@ -35,7 +35,7 @@
 	<table width="100%">
   <tr>
     <td align="right">
-       <p>Siguenos en Twitter : <a href="https://twitter.com/CineTexNet" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @CineTexNet</a>
+       <p>Siguenos en <font style="font-size: 200%">Twitter :</font> <a href="https://twitter.com/CineTexNet" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @CineTexNet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </p>
 </td>
@@ -62,17 +62,17 @@
              
             <table width="100%">
               <tr>
-                <td>
-                  <img width="90%" style="display: block;" src="/jsp/img/<c:out value="${Resena.getUrl()}"/>.jpg">
+                <td align="center">
+                  <img width="90%" style="display: block;" src="${Pagina.getImgPATH()}/<c:out value="${Resena.getUrl()}"/>.jpg">
                 </td>
               </tr>
             </table>
             
             
-            <table width="100%" >
+            <table width="80%" align="center">
             <tr>
-              <td valign="top" width="90%" align="justify">                  
-                    <p style="font-size: x-large;"> ${Resena.getTexto()}</p>
+              <td valign="top" width="100%" align="center">                  
+                    <p align="justify"> <font style="font-size: 210%;font-family: verdana;line-height: 1.3;">${Resena.getTexto()}</font></p>
               </td>                           
             </tr>
             
@@ -89,7 +89,7 @@
 
 </div>
 
-<div id="footer"><p><a href="#">homepage</a> | <a href="mailto:denise@mitchinson.net">contact</a> | &copy; 2008 Anyone | Design by <a href="http://www.mitchinson.net"> www.mitchinson.net</a> |  Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0  License</a></p></div>
+<div id="footer" ><p><a href="Portada.htm">homepage</a> | <a href="mailto:CineTex@outlook.com">contact</a> | | Design by <a href="http://www.mitchinson.net"> www.mitchinson.net</a> |  Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0  License</a></p></div>
 
 </div>
 </body>

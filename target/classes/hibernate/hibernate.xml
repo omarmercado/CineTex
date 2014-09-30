@@ -29,8 +29,9 @@
     <id name="id" column="PAGINA_ID">
       <generator class="native"/>
     </id>
-    <property name="UltimaActualizacion"/>
-  </class>
+      <property name="UltimaActualizacion"/>
+      <property name="imgPATH"/>
+    </class>
   
      <class name="PageView" table="PAGEVIEW" >
     <id name="id" column="PAGEVIEW_ID">

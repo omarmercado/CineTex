@@ -62,9 +62,11 @@ public class ResenaController {
 			@RequestParam(value="txtTitulo")String titulo,
 			@RequestParam(value="txtTexto")String texto,
 			@RequestParam(value="txtUrl")String url,
+			@RequestParam(value="txtContent")String content,
+			@RequestParam(value="txtOgContent")String ogContent,
 			HttpServletRequest request){
 		
-		
+		 
 		int activeSession = usuariosDAO.revisarSession(request);
 		
 		if(activeSession == 0){
@@ -74,7 +76,7 @@ public class ResenaController {
 			return mv;
 		}
 		
-		resenaDAO.setResenaEdit(id, titulo, texto, url);
+		resenaDAO.setResenaEdit(id, titulo, texto, url,content, ogContent);
 		
 		Articulo Resena = resenaDAO.getResena(id);
 

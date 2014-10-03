@@ -29,6 +29,8 @@ public class ArticuloController {
 	public ModelAndView newArticulo(@RequestParam(value="titulo")String titulo,
 			         @RequestParam(value="texto")String texto,
 					 @RequestParam(value="url")String url,
+					 @RequestParam(value="content")String content,
+					 @RequestParam(value="ogContent")String ogContent,
 					 HttpServletRequest request){
 		
 		
@@ -46,7 +48,8 @@ public class ArticuloController {
 		map.put("titulo", titulo);
 		map.put("texto",texto);
 		map.put("url",url);
-		
+		map.put("content",content);
+		map.put("ogContent",ogContent);
 		articuloDAO.newArticulo(map);
 	
 		return new ModelAndView("redirect:/Portada.htm");

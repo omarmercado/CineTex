@@ -32,13 +32,13 @@ background : #fff;
 			/*header*/
 #top {
 padding : 1em;
-height:100px;
+height:70px;
 background :  url(images/cinema.jpg) no-repeat;
 color : #fff;
 }
 #top h1 {letter-spacing: 3px;
 float:center;
-padding : 30px 0 10px 40px;
+padding : 10px 0 10px 40px;
 margin-left : 150px;
 font-size : 30pt;
 color: black;

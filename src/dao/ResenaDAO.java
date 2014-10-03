@@ -27,7 +27,7 @@ public class ResenaDAO {
 
 	}
 	
-public Articulo setResenaEdit(String id,String titulo,String texto,String url){
+public Articulo setResenaEdit(String id,String titulo,String texto,String url,String content,String ogContent){
 		
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();	
@@ -36,6 +36,8 @@ public Articulo setResenaEdit(String id,String titulo,String texto,String url){
 		articulo.setTexto(texto);
 		articulo.setTitulo(titulo);
 		articulo.setUrl(url);
+		articulo.setContent(content);
+		articulo.setOgContent(ogContent);
 		session.save(articulo);
 	
 		 

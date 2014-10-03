@@ -14,6 +14,9 @@ public class Articulo {
 	Date Fecha;
 	String Url;
 	String Imagen;
+	String Content;
+	String ogContent;
+	
 	public int getId() {
 		return id;
 	}
@@ -56,17 +59,32 @@ public class Articulo {
 	public void setImagen(String imagen) {
 		Imagen = imagen;
 	}
+	public String getContent() {
+		return Content;
+	}
+	public void setContent(String content) {
+		Content = content;
+	}
+	public String getOgContent() {
+		return ogContent;
+	}
+	public void setOgContent(String ogContent) {
+		this.ogContent = ogContent;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((Autor == null) ? 0 : Autor.hashCode());
+		result = prime * result + ((Content == null) ? 0 : Content.hashCode());
 		result = prime * result + ((Fecha == null) ? 0 : Fecha.hashCode());
 		result = prime * result + ((Imagen == null) ? 0 : Imagen.hashCode());
 		result = prime * result + ((Texto == null) ? 0 : Texto.hashCode());
 		result = prime * result + ((Titulo == null) ? 0 : Titulo.hashCode());
 		result = prime * result + ((Url == null) ? 0 : Url.hashCode());
 		result = prime * result + id;
+		result = prime * result
+				+ ((ogContent == null) ? 0 : ogContent.hashCode());
 		return result;
 	}
 	@Override
@@ -82,6 +100,11 @@ public class Articulo {
 			if (other.Autor != null)
 				return false;
 		} else if (!Autor.equals(other.Autor))
+			return false;
+		if (Content == null) {
+			if (other.Content != null)
+				return false;
+		} else if (!Content.equals(other.Content))
 			return false;
 		if (Fecha == null) {
 			if (other.Fecha != null)
@@ -110,9 +133,13 @@ public class Articulo {
 			return false;
 		if (id != other.id)
 			return false;
+		if (ogContent == null) {
+			if (other.ogContent != null)
+				return false;
+		} else if (!ogContent.equals(other.ogContent))
+			return false;
 		return true;
 	}
-	
 	
 	
 }

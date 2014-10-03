@@ -5,10 +5,22 @@
     
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
+<html prefix="og: http://ogp.me/ns#">
+<head profile="http://www.w3.org/2005/10/profile">
+<link rel="icon" type="images/png" href="/theme/images/icon.png" />
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>CineTex.NET</title>
+<title>${Resena.getTitulo()} - CineTex.NET</title>
+<meta content="${Resena.getContent()}" name="description">
+<meta content="es"  name="locale">
+
+<meta content="CineTex" property="og:site_name">
+<meta value="@CineTexNET" name="twitter:site">
+<meta content="http://www.Cinetex.net/" property="og:url">
+<meta content="${Resena.getTitulo()}" property="og:title">
+<meta content="${Resena.getOgContent()}" property="og:description">
+<meta property="og:locale" content="es" />
+
 <link href="mobile/theme/style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -19,7 +31,7 @@
 </div>
 
 
-<h1><span style="color:black; font-size:400%;">CineTex.NET</span></h1>
+<h1><span style="color:black; font-size:200%;">CineTex.net</span></h1>
 
 
 <div id="container">
@@ -28,7 +40,7 @@
 		<ul>
 		<li><font size="100%"><a href="Portada.htm">Portada</a></font></li>
 		<li><font size="100%"><a href="Archivo.htm">Archivo</a></font></li>
-		<li><font size="100%"><a href="jsp/mobile/SitiosRecomendados.jsp">Sitios Recomendados</a></font></li>				
+		<li><font size="100%"><a href="jsp/mobile/SitiosRecomendados.jsp">Recomendados</a></font></li>				
 		</ul>
 </div>
 	
@@ -47,7 +59,7 @@
 <table width="100%" cellspacing="50">
   <tr>
     <td  align="center">
-      <font style="font-size: 300%" > ${Resena.getTitulo()}</font>
+      <font style="font-size: 340%" > ${Resena.getTitulo()}</font>
     </td>
   </tr>
 </table>
@@ -56,23 +68,25 @@
 <form name="frmResena" action="ResenaEdit.htm" method="post">
 <input type="hidden" name="id" id="id" value="${Resena.getId()}"/>
 <table width="100%" >
-  <tr>
-  
+  <tr>  
           <td width="100%"  style="border: 4px solid #eee;background : #F7FAFB ;">  
              
             <table width="100%">
               <tr>
                 <td align="center">
-                  <img width="90%" style="display: block;" src="${Pagina.getImgPATH()}/<c:out value="${Resena.getUrl()}"/>.jpg">
+                  <img width="100%" style="display: block;" src="${Pagina.getImgPATH()}/<c:out value="${Resena.getUrl()}"/>.jpg">
                 </td>
               </tr>
             </table>
             
-            
-            <table width="80%" align="center">
+          </td>
+  </tr>
+</table>         
+   
+   <table width="88%" align="center">
             <tr>
-              <td valign="top" width="100%" align="center">                  
-                    <p align="justify"> <font style="font-size: 210%;font-family: verdana;line-height: 1.3;">${Resena.getTexto()}</font></p>
+              <td valign="top"  align="center">                  
+                    <p align="justify"> <font style="font-size: 190%;font-family: sans-serif;line-height: 1.4;">${Resena.getTexto()}</font></p>
               </td>                           
             </tr>
             
@@ -81,15 +95,12 @@
               <td>Aurtor : ${Resena.getAutor()}</td>
               <td></td>
             </tr>
-            </table>
-          </td>
-  </tr>
+
 </table>
 </form>     
 
 </div>
 
-<div id="footer" ><p><a href="Portada.htm">homepage</a> | <a href="mailto:CineTex@outlook.com">contact</a> | | Design by <a href="http://www.mitchinson.net"> www.mitchinson.net</a> |  Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0  License</a></p></div>
 
 </div>
 </body>

@@ -2,7 +2,9 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
+<head profile="http://www.w3.org/2005/10/profile">
+<link rel="icon" type="images/png" href="/theme/images/icon.png" />
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>CineTex : Ingresar</title>
 <link href="../theme/style.css" rel="stylesheet" type="text/css" />
@@ -11,7 +13,7 @@
 <body>
 
 <div id="container">
-<div id="top"><h1><span style="color:#259FDA; font-size:14pt;">CineTex.NET</span></h1></div>
+<div id="top"><h1><span style="color:#259FDA; font-size:14pt;">CineTex.net</span></h1></div>
 
 <div id="navcontainer">
 <div id="topnav">

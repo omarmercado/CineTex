@@ -5,17 +5,30 @@
     
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
+
+<html prefix="og: http://ogp.me/ns#">
+<head profile="http://www.w3.org/2005/10/profile">
+<link rel="icon" type="images/png" href="/theme/images/icon.png" />
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>CineTex.NET</title>
+<title>${Resena.getTitulo()} - CineTex.NET</title>
+<meta content="${Resena.getContent()}" name="description">
+<meta content="es"  name="locale">
+
+<meta content="CineTex" property="og:site_name">
+<meta value="@CineTexNET" name="twitter:site">
+<meta content="http://www.Cinetex.net/" property="og:url">
+<meta content="${Resena.getTitulo()}" property="og:title">
+<meta content="${Resena.getOgContent()}" property="og:description">
+<meta property="og:locale" content="es" />
+
 <link href="theme/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
 <div id="container">
-<div id="top"><h1><span>CineTex.NET</span></h1></div>
+<div id="top"><h1><span>CineTex.net</span></h1></div>
 
 <div id="navcontainer">
 <div id="topnav">
@@ -84,6 +97,9 @@
             
               <c:if test="${sessionScope.usuario > 0}">
                 <input type="text" name="txtUrl" id="txtUrl" value="${Resena.getUrl()}"/>
+               Content : <input type="text" name="txtContent" id="txtUrl" value="${Resena.getContent()}"/>
+               OG Content : <input type="text" name="txtOgContent" id="txtUrl" value="${Resena.getOgContent()}"/>
+                
                 <input type="submit" value="Editar"/>
               </c:if>
               

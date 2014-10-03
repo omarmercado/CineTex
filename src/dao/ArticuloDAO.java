@@ -23,6 +23,8 @@ public class ArticuloDAO {
 		articulo.setTexto(map.get("texto"));
 		articulo.setAutor("CineTex");
 		articulo.setUrl(map.get("url"));
+		articulo.setContent(map.get("content"));
+		articulo.setOgContent(map.get("ogContent"));
 		
 		Date date = new Date(System.currentTimeMillis());
 		articulo.setFecha(date);

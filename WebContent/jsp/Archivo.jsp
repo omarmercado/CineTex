@@ -3,17 +3,29 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
+<html prefix="og: http://ogp.me/ns#">
+<head profile="http://www.w3.org/2005/10/profile">
+<link rel="icon" type="images/png" href="/theme/images/icon.png" />
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>CineTex.NET</title>
-<link href="theme/style.css" rel="stylesheet" type="text/css" />
+<title>CineTex.NET : Archivo</title>
+<meta content="CineTex.NET es un sitio dedicado a la resena (Reviews) de peliculas en espanol (sin importar en que fecha fueron estrenadas),
+buscando dar un punto de vista personal acerca de los puntos buenos y malos de cada pelicula" name="description">
+<meta content="es"  name="locale">
+<meta content="CineTex" property="og:site_name">
+<meta value="@CineTexNET" name="twitter:site">
+<meta content="http://www.Cinetex.net/" property="og:url">
+<meta content="CineTex.NET : Archivo" property="og:title">
+<meta content="CineTex.NET es un sitio dedicado a la resena (Reviews) de peliculas en espanol (sin importar en que fecha fueron estrenadas),
+buscando dar un punto de vista personal acerca de los puntos buenos y malos de cada pelicula" property="og:description">
+<meta property="og:locale" content="es" />
+<link href="/theme/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
 <div id="container">
-<div id="top"><h1><span>CineTex.NET</span></h1></div>
+<div id="top"><h1><span>CineTex.net</span></h1></div>
 
 <div id="navcontainer">
 <div id="topnav">
@@ -64,7 +76,7 @@
         <c:forEach var="Resena" items="${ListaResultado}">
           <tr><td>
             <FONT style="font-size: 130%">
-              <a href="Resena.htm?id=<c:out value="${Resena.getId()}" />" target="_blank" >* ${Resena.getTitulo()} </a>
+              <a href="Resena.htm?id=<c:out value="${Resena.getId()}" />"  >* ${Resena.getTitulo()} </a>
             </FONT>
           </td></tr>
         </c:forEach>  
